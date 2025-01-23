@@ -1,0 +1,8 @@
+1. data_prep.py ---> train_dataset.csv, val_dataset.csv, train_dataset_augmented.csv
+2. Cluster the train dataset and obtain train_dataset_method1_clustered.csv. Method 1 means K-means was used.
+3. Cluster the val dataset using the clustering model trained on the train set. Obtain validation_dataset_method1_clustered.csv
+4. Choose a specific cluster to finetune the LLM on. We chose cluster 6
+5. creating_cluster_datasets_method1.ipynb ---> produces train_dataset_cluster6_augmented.csv and validation_dataset_cluster6_augmented.csv using the csv files from part 2 and 3. We essentially just filter the train_dataset_augmented.csv for ids in cluster 6
+6. finetuning.py
+7. bulk_predict_finetuned.py ---> produces the JSON results
+8. eval.ipynb to obtain the accuracy scores/metrics
